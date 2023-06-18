@@ -16,6 +16,10 @@ func setupRouter() *gin.Engine {
 		c.String(http.StatusOK, "pong")
 	})
 
+	r.GET("/healthz", func(c *gin.Context) {
+		c.String(http.StatusOK, "health")
+	})
+
 	return r
 }
 
