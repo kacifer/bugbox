@@ -12,6 +12,10 @@ func setupRouter() *gin.Engine {
 
 	buggy_gin.UseAll(r)
 
+	r.GET("/", func(c *gin.Context) {
+		c.String(http.StatusOK, "ok")
+	})
+
 	r.GET("/ping", func(c *gin.Context) {
 		c.String(http.StatusOK, "pong")
 	})
